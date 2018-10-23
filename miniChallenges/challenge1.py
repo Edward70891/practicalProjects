@@ -4,6 +4,7 @@ import math
 primesDict = {2: True}
 
 
+# Completely useless
 def basic(num):
     if num < 2 or num > 49:
         raise OverflowError
