@@ -40,10 +40,12 @@ def primeFactors(num: int) -> list:
         return [num]
     for i in range(2, math.floor(num**(0.5))):
         if num % i == 0 and clever(i):
-            return primeFactors(num/i).append(i)
+            prior = primeFactors(num/i)
+            return [prior].append(i)
     raise ValueError("primeFactors didn't find a prime factor!")
 
 
+# The actual func
 def olympian(num):
     product = 1
     factors = primeFactors(num)
