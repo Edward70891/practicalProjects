@@ -4,8 +4,7 @@ import math
 primesDict = {2: True}
 
 
-# Runs through all numbers between 2 and the square root
-# (rounded down if necessary) of the number and checks if they divide it
+# Runs through all numbers between 2 and the square root (rounded down if necessary) of the number and checks if they divide it
 def advanced(num):
     for i in range(2, math.floor(num**(0.5)) + 1):
         if num % i == 0:
@@ -13,8 +12,7 @@ def advanced(num):
     return True
 
 
-# Calls the above, but checks if the number is in the primes dictionary
-# beforehand. If it is a prime but not in the dictionary, it is added to the
+# Calls the above, but checks if the number is in the primes dictionary beforehand. If it is a prime but not in the dictionary, it is added to the
 # dictionary.
 def clever(num):
     prime = num in primesDict.keys()
@@ -26,14 +24,13 @@ def clever(num):
 
 
 # Returns a list of all the prime factors of a number; duplicates included.
-# Note: recursive.
 def primeFactors(num: int) -> list:
     num = int(num)
     if clever(num):
         return [num]
     for i in range(2, math.floor(num**(0.5)) + 1):
         if num % i == 0 and clever(i):
-            prior = primeFactors(int(num/i))
+            prior = primeFactors(int(num / i))
             prior.append(i)
             return prior
 
