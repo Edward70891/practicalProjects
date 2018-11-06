@@ -1,17 +1,17 @@
-from dataScraping import *
+from dataScraping import scrapeData
 
 
 def minPrecip(fileName):
-    data = {k:v for k,v in (scrapeData(fileName))}
+    data = {k: v for k, v in (scrapeData(fileName))}
     miniValue = min(data.values())
-    years = [k for k,v in data.items() if v == miniValue]
+    years = [k for k, v in data.items() if v == miniValue]
     return years
 
 
 def maxPrecip(fileName):
-    data = {k:v for k,v in (scrapeData(fileName))}
+    data = {k: v for k, v in (scrapeData(fileName))}
     maxiValue = max(data.values())
-    years = [k for k,v in data.items() if v == maxiValue]
+    years = [k for k, v in data.items() if v == maxiValue]
     return years
 
 
